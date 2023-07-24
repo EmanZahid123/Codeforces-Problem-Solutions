@@ -1,0 +1,32 @@
+A word or a sentence in some language is called a pangram if all the characters of the alphabet of this language appear in it at least once. Pangrams are often used to demonstrate fonts in printing or test the output devices.
+
+You are given a string consisting of lowercase and uppercase Latin letters. Check whether this string is a pangram. We say that the string contains a letter of the Latin alphabet if this letter occurs in the string in uppercase or lowercase.
+
+Input
+The first line contains a single integer n (1 ≤ n ≤ 100) — the number of characters in the string.
+
+The second line contains the string. The string consists only of uppercase and lowercase Latin letters.
+
+Output
+Output "YES", if the string is a pangram and "NO" otherwise.
+
+def pangram(n,s):
+    
+    if n<26:
+        return "NO"
+    s=s.lower()
+    l=[]
+    for i in range(26):
+        l.append("False")
+    for i in range(n):
+        o=ord(s[i])-ord("a")
+        l[o]=True
+    for i in range(26):
+        if l[i]!=True:
+            return "NO"
+    return "YES"
+def main():
+    n=int(input())
+    s=input()
+    print(pangram(n,s))
+main()
