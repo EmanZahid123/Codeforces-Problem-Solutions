@@ -1,0 +1,56 @@
+You are given an array of positive integers a
+ of length n
+.
+
+Let's call an array of positive integers b
+ of length n
+ good if:
+
+ai≠bi
+ for all i
+ from 1
+ to n
+,
+a1+a2+…+an=b1+b2+…+bn
+.
+Does a good array exist?
+
+Input
+Each test contains multiple test cases. The first line of input contains a single integer t
+ (1≤t≤104
+) — the number of test cases. The description of the test cases follows.
+
+The first line of each test case contains a single integer n
+ (1≤n≤105
+) — the length of the array a
+.
+
+The second line of each test case contains n
+ integers a1,a2,…,an
+ (1≤ai≤109
+) — the elements of the array a
+.
+
+It is guaranteed that the sum of n
+ over all test cases does not exceed 105
+.
+
+Output
+For each test case, output "YES" (without quotes) if there exists a good array, and "NO" (without quotes) otherwise.
+
+def good_array(n,l):
+    if n==1:
+        return "NO"
+    c=l.count(1)
+    s=sum(l)
+    if s>=c+n:
+        return "YES"
+    return "NO"
+def main():
+    t=int(input())
+    for i in range(t):
+        n=int(input())
+        l=list(map(int,input().split()))
+        print(good_array(n,l))
+main()
+recognized as positive responses.
